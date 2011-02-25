@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Logistikcenter.Domain" assembly="Logistikcenter.Domain">
+	<class name="Route" table="Route">
+		<id name="Id"  access="field.camelcase">
+			<generator class="native" />
+		</id>
+		<property name="Shortage" type="double" access="field.camelcase" not-null="true"/>
+		<many-to-one name="TransportUnit" access="field.camelcase" class="TransportUnit" column="TransportUnitId" not-null="true" />
+		<list name="Legs" access="field.camelcase" table="Route_Leg" cascade="all">
+			<key column="RouteId"/>
+			<index column="ListIndex"/>
+			<many-to-many column="LegId" class="Leg"/>
+		</list>
+	</class>
+</hibernate-mapping>

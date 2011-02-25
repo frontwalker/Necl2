@@ -1,0 +1,69 @@
+﻿@model Logistikcenter.Web.Models.TransportModel
+@using Logistikcenter.Web.Extensions;
+
+<script type="text/javascript">
+        
+    $(function () {        
+        $("#Destination").autocomplete({ source: '/api/destination' });
+        $("#Origin").autocomplete({ source: '/api/destination' });               
+        $(".radio").buttonset();        
+    })
+
+</script>
+<img src="../../Content/Images/train_startpage.jpg" />
+<h2 class="green">Sök transport</h2>
+
+<form id="transportRequest" action="/Route/Find" method="get">    
+
+    <fieldset id="destination" class="transportRequestFieldset">
+        <legend>Destination</legend>
+        <div class="ui-widget">
+            @Html.LabelFor(m => m.Origin)    
+            @Html.TextBoxFor(m => m.Origin)
+        </div>
+        <div class="ui-widget">
+            @Html.LabelFor(m => m.Destination)                          	
+	        @Html.TextBoxFor(m => m.Destination)
+        </div>
+    </fieldset>
+
+    <fieldset id="timeanddate" class="transportRequestFieldset">
+        <legend>Tid och datum</legend>            
+        @Html.LabelFor(m => m.DateRestrictionType)      
+        @Html.DropDownListFor(m => m.DateRestrictionType, Model.DateRestrictionTypes)
+
+        @Html.LabelFor(m => m.Time)            
+        @Html.DropDownListFor(m => m.Time, Model.Hours)
+
+        @Html.LabelFor(m => m.Date)            
+        @Html.EditorFor(m => m.Date)
+    </fieldset>
+        
+    <fieldset id="packageInformation" class="transportRequestFieldset">
+        <legend>Godsinformation</legend>
+        <div class="blockLeft">
+            @Html.LabelFor(m => m.Packages)
+            @Html.TextBoxFor(m => m.Packages)
+        </div>
+        <div class="blockLeft">
+            @Html.LabelFor(m => m.PackageType)                
+            @Html.RadioButtonListFor(m => m.PackageType, Model.PackageTypes)
+            </div>
+        <div class="blockLeft">
+            @Html.LabelFor(m => m.SelectedVolumeType)         
+            @Html.RadioButtonListFor(m => m.SelectedVolumeType, Model.SelectedVolumeTypes)
+        </div>                  
+        <div class="blockLeft">
+            @Html.LabelFor(m => m.Weight)
+            @Html.TextBoxFor(m => m.Weight)
+        </div>
+        <div class="blockLeft">
+            @Html.LabelFor(m => m.Volume)
+            @Html.TextBoxFor(m => m.Volume)
+        </div>
+    </fieldset>
+
+    <div class="clear">
+        <input type="submit" name="button" value="Sök" />
+    </div>
+</form>

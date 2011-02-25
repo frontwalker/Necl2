@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Logistikcenter.Domain" assembly="Logistikcenter.Domain">
+	<class name="TransportBase" table="TransportBase">
+		<id name="Id"  access="field.camelcase">
+			<generator class="native" />
+		</id>
+		<version name="Version" access="field.camelcase" unsaved-value="0"/>
+		<property name="CreatedTime" type="datetime" access="field.camelcase" not-null="true"/>
+		<many-to-one name="Customer" access="field.camelcase" class="Customer" column="CustomerId" not-null="true"/>
+		
+		<list name="TransportUnits" access="field.camelcase" table="TransportBase_TransportUnit" cascade="all">
+			<key column="TransportBaseId"/>
+			<index column="ListIndex"/>
+			<many-to-many column="TransportUnitId" class="TransportUnit"/>
+		</list>
+		
+		<joined-subclass name="TransportOrder" table="TransportOrder">
+			<key column="TransportBaseId"/>
+			<property name="Status" type="int" access="field.camelcase" not-null="true"/>
+		</joined-subclass>
+
+		<joined-subclass name="TransportRequest" table="TransportRequest">
+			<key column="TransportBaseId"/>
+			
+			<property name="Status" type="int" access="field.camelcase" not-null="true"/>
+		</joined-subclass>
+
+
+
+		
+
+
+	</class>
+
+</hibernate-mapping>

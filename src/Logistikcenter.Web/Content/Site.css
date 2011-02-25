@@ -1,0 +1,434 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: White;
+    font-size: 75%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    margin: 1em 0 0 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h2.green
+{
+    padding: 0 5px 0 5px;
+    margin: 0 0 0 0;
+    background-color: #C7CCAE;
+    font-size: 1em;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#top
+{    
+    position: relative;
+    margin-bottom: 15px;
+    min-height:49px;    
+    padding: 0;    
+    background-color: White;
+    background-image: url("../../Content/Images/LogoTop.gif");
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+#header
+{
+    float:left;    
+    margin-bottom: 10px;
+    color: #000;
+    padding: 0;    
+    background-color:#C7CCAE;
+    width: 100%;
+}
+
+#main
+{
+    float:left;
+    padding: 0 0 0 0;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+#left
+{
+    float:left;
+    width:720px;
+    margin-right: 10px;
+}
+
+#right
+{
+    float:right;    
+    width:230px;
+}
+
+#right h2
+{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul.tabmenu
+{    
+    padding: 0 0 0 0;
+    position: relative;
+    margin: 0;    
+}
+
+ul.tabmenu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul.tabmenu li a
+{    
+    padding: 0 5px 0 5px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.0em;
+    background-color: #C7CCAE;
+    color:Black;
+}
+
+ul.tabmenu li a:active
+{    
+    text-decoration: none;
+}
+
+ul.tabmenu li.selected a
+{    
+    color: #000;
+}
+
+/* TOP MENU
+----------------------------------------------------------*/
+ul#topMenu
+{
+    float:right;
+}
+
+ul#topMenu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#topMenu li a
+{    
+    padding: 0 5px 0 5px;    
+    text-decoration: none;
+    line-height: 2.0em;    
+    color: #034af3;
+}
+
+/* FLAG MENU
+----------------------------------------------------------*/
+ul#flagMenu
+{
+    float:right;
+}
+
+ul#flagMenu li
+{
+    display: inline;
+    list-style: none;
+}
+
+/* MAIN MENU
+----------------------------------------------------------*/
+#menucontainer
+{
+    float:left;    
+    width: 100%;
+}
+
+ul#menu
+{
+    float: left;
+}
+
+/* LOGON MENU
+----------------------------------------------------------*/
+ul#logonMenu
+{
+    float: right;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 1.5em 0 1.5em 0;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+input[type="text"] 
+{    
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{    
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #C7CCAE; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.display-field,
+.editor-field
+{
+    margin:0.5em 0 0 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+/* /Transport
+----------------------------------------------------------*/
+
+#transportRequest input[type="submit"]
+{
+    height:25px;
+    width:100px;
+    margin-top: 10px;
+}
+
+.transportRequestFieldset 
+{
+    border: 0 solid #ddd;    
+    margin: 1em 1em 0 0;
+    padding: 0 0 0 0;    
+}
+
+.transportRequestFieldset input[type="text"], .transportRequestFieldset input[type="select"]
+{
+    height:25px;
+}
+
+.transportRequestFieldset legend
+{
+    font-weight: bold;    
+}
+
+.transportRequestFieldset label
+{
+    display:block;    
+}
+
+#destination, #timeanddate
+{
+    float:left;
+}
+
+#packageInformation
+{
+    clear:both;
+}
+
+#packageInformation legend
+{
+    padding-top: 2em;
+}
+
+#packageInformation .blockLeft
+{
+    float:left;
+    padding-right: 1.5em;
+}
+
+#packageInformation .radio label
+{
+    float:left;
+}
+
+#packageInformation input[type="text"]
+{
+    width:50px;
+    height:25px;
+}

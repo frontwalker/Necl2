@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Logistikcenter.Domain" assembly="Logistikcenter.Domain">
+	<class name="TransportUnit" table="TransportUnit">
+		<id name="Id"  access="field.camelcase">
+			<generator class="native" />
+		</id>
+		<many-to-one name="Origin" access="field.camelcase" class="Destination" column="OriginId" not-null="true"/>
+		<many-to-one name="Destination" access="field.camelcase" class="Destination" column="DestinationId" not-null="true"/>
+		<property name="MinPickupTime" type="datetime" access="field.camelcase" not-null="true"/>
+		<property name="MaxDeliveryTime" type="datetime" access="field.camelcase" not-null="true"/>
+
+		<many-to-one name="SelectedRoute" access="field.camelcase" class="Route" column="SelectedRouteId" not-null="false" />
+
+		<list name="ProposedRoutes" access="field.camelcase" table="TransportUnit_Route" cascade="all">
+			<key column="TransportUnitId"/>
+			<index column="ListIndex"/>
+			<many-to-many column="RouteId" class="Route"/>
+		</list>
+		
+		<component name="Cargo" access="field.camelcase">
+			<property name="Volume" type="double" access="field.camelcase" not-null="true"/>
+		</component>
+
+	</class>
+
+</hibernate-mapping>

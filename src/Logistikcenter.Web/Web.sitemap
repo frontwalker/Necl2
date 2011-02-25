@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Root" description="Root LogistikMäklaren" >
+    <siteMapNode title="Sök transport" description="Sök transport" url="Transport" />
+    <siteMapNode title="Leverantör" description="Leverantlör" url="Supplier" />
+    <siteMapNode title="Speditör" description="Speditör" url="ShippingAgent" />
+    <siteMapNode title="Information" description="Information" url="Information" />
+    <siteMapNode title="Kundservice" description="Kundservicve" url="Support" />
+    <siteMapNode title="Press" description="Press" url="Press" />
+    <siteMapNode title="Om Logistikmäklaren" description="Om Logistikmäklaren" url="About" />
+  </siteMapNode>        
+</siteMap>

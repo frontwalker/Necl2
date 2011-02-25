@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Logistikcenter.Domain" assembly="Logistikcenter.Domain">
+	<class name="Leg" table="Leg">
+		<id name="Id"  access="field.camelcase">
+			<generator class="native" />
+		</id>
+		<version name="Version" access="field.camelcase" unsaved-value="0"/>
+		<many-to-one name="Carrier" access="field.camelcase" class="ShippingAgent" column="ShippingAgentId" not-null="true" />
+		<many-to-one name="Origin" access="field.camelcase" class="Destination" column="OriginId" not-null="true" />
+		<many-to-one name="Destination" access="field.camelcase" class="Destination" column="DestinationId" not-null="true"/>
+		<property name="CarrierType" type="int" access="field.camelcase"  not-null="true" />
+		<property name="DepartureTime" type="datetime" access="field.camelcase" not-null="true"/>
+		<property name="ArrivalTime" type="datetime" access="field.camelcase" not-null="true"/>
+		<property name="TotalCapacity" type="double" access="field.camelcase" not-null="true"/>
+		<property name="UsedCapacity" type="double" access="field.camelcase" not-null="true"/>
+		<property name="Cost" type="double" access="field.camelcase" not-null="true"/>
+		<property name="UniqueIdentifier" type="String" length="255" access="field.camelcase" not-null="true"/>
+		
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,76 @@
+﻿@model Logistikcenter.Web.Models.RouteModel
+
+<h2>@Model.Origin - @Model.Destination</h2>
+
+<ul>
+    <li><label>Antal kollin:</label>@Model.Packages</li>
+    <li><label>Kollityp:</label>@Model.PackageType</li>
+    <li><label>Vikt/volym:</label>@Model.Volume</li>
+    <li><label>Leverans:</label>@Model.DeliveryInformation</li>
+</ul>
+
+<table width="100%">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Avgår</th>
+            <th>Ankommer</th>
+            <th>Frakttid</th>
+            <th>Upplysningar</th>
+            <th>Pris</th>            
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var route in Model.Routes)
+    {        
+        <tr>
+            <td><text>></text></td>
+            <td>@route.DepartureTime.ToString("yyMMdd HH:mm")</td>
+            <td>@route.ArrivalTime.ToString("yyMMdd HH:mm")</td>
+            <td>@route.Duration.TotalHours.ToString("00"):@route.Duration.Minutes.ToString("00")</td>
+            <td>@route.Information</td>
+            <td>@route.Cost</td>
+
+            @{                                                  
+                string legs = Json.Encode(route.Legs.Select(l => l.Id));
+                var b64 = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(legs));                 
+             }
+
+            <td><a href="/Booking?info=@b64">Boka</a></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="6">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th>Från</th>
+                            <th>Avgår</th>
+                            <th>Till</th>                            
+                            <th>Ankommer</th>
+                            <th>Färdmedel</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var leg in route.Legs)
+                    {
+                        <tr>
+                            <td>@leg.Origin.Name</td>                             
+                            <td>@leg.DepartureTime.ToString("yyMMdd HH:mm")</td>                             
+                            <td>@leg.Destination.Name</td>   
+                            <td>@leg.ArrivalTime.ToString("yyMMdd HH:mm")</td>
+                            <td>@leg.CarrierTypeDisplayName</td>                            
+                        </tr>
+                    }
+                    </tbody>
+                </table>                
+            </td>            
+        </tr>        
+    }
+    </tbody>        
+</table>
+
+
+
+

@@ -1,0 +1,11 @@
+﻿<ul id="logonMenu" class="tabmenu">
+@if(Request.IsAuthenticated) 
+{    
+    <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Bli kund", "Register", "Account")</li>
+    <li>@Html.ActionLink("Log On", "LogOn", "Account")</li>
+}
+</ul>
