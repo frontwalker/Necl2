@@ -17,7 +17,7 @@ namespace Logistikcenter.Tests.Lingo
 
     public class PrototypCostTests
     {
-        private const string ModelPath = @"C:\Dev\Logistikcenter.Mvc\src\Logistikcenter.Tests\Lingo\PrototypCost\prototypCost.lng";
+        private const string ModelPath = @"C:\Dev\Necl2\src\Logistikcenter.Services\Lingo\Models\prototypCost.lng";
         readonly int pLingoEnv;
 
         public PrototypCostTests()

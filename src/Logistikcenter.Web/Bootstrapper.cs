@@ -51,7 +51,7 @@ namespace Logistikcenter.Web
         public ApplicationRegistry()
         {
             For<ITransportOptimizationService>().HttpContextScoped().Use<LingoTransportOptimizationService>()
-                .Ctor<string>("modelPath").Is(@"C:\Dev\Logistikcenter.Mvc\src\Logistikcenter.Services\Lingo\Models\prototypCost.lng")
+                .Ctor<string>("modelPath").Is(@"C:\Dev\Necl2\src\Logistikcenter.Services\Lingo\Models\prototypCost.lng")
                 .Ctor<string>("inputFileFolder").Is(@"C:\Temp")
                 .Ctor<string>("logFileFolder").Is(@"C:\Temp\Logs");
         }

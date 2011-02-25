@@ -83,6 +83,11 @@ namespace Logistikcenter.Services.Lingo
             EnsureFilesAndFoldersExists();
         }
 
+        public virtual DateTime Now()
+        {
+            return DateTime.Now;
+        }
+
         private void EnsureFilesAndFoldersExists()
         {
             if (!File.Exists(_modelPath.FullName))
@@ -104,8 +109,8 @@ namespace Logistikcenter.Services.Lingo
         public void LoadData(DateTime minStartTime, DateTime maxEndTime)
         {
             _legs = _repository.Query<Leg>().Where(l => l.DepartureTime >= minStartTime && l.ArrivalTime <= maxEndTime).ToList();
-            
-            _zeroTime = DateTime.Now;
+
+            _zeroTime = Now();
 
             _numLegs = _legs.Count;
 
