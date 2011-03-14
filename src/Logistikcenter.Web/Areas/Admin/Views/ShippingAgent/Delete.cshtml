@@ -1,0 +1,18 @@
+﻿@model Logistikcenter.Web.Areas.Admin.Models.ShippingAgentModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<p>
+    Är du säker på att du vill ta bort @Model.CompanyName?
+</p>
+
+<form action="/admin/shippingagent/delete" method="post">
+    @Html.HiddenFor(m => m.Id)
+
+    <input type="submit" name="Delete" value="Ta bort" />
+</form>

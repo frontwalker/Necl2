@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Logistikcenter.Web.Areas.Admin.Models.ShippingAgentModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Speditörer</h2>
+
+<p>
+    @Html.ActionLink("Lägg till", "Create", "ShippingAgent")
+</p>
+
+<table width="100%">
+    <thead>
+        <tr>            
+            <th>Företagsnamn</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>    
+    </thead>
+    <tbody>
+        @foreach (var agent in Model)
+        { 
+            <tr>                
+                <td>@agent.CompanyName</td>
+                <td>@agent.FirstName</td>
+                <td>@agent.LastName</td>
+                <td>@Html.ActionLink("Redigera", "Edit", "ShippingAgent", new { id = agent.Id }, null)</td>
+                <td>@Html.ActionLink("Ta bort", "Delete", "ShippingAgent", new { id = agent.Id }, null)</td>
+            </tr>                
+        }
+    </tbody>
+</table>
+

@@ -6,7 +6,7 @@
     
     @foreach (SiteMapNode node in siteMap)
     {
-        <li>@Html.ActionLink(@node.Title, "Index", @node.Url.Replace("/", ""))</li>
+        <li>@Html.ActionLink(@node.Title, "Index", @node.Url)</li>
     }
 
 </ul>

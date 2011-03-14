@@ -92,5 +92,30 @@ namespace Logistikcenter.Tests.Lingo
         {
             return (IQueryable<T>) _data.AsQueryable();            
         }
+
+        public void Save(object entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(object entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete<T>(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteById<T>(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(object entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
