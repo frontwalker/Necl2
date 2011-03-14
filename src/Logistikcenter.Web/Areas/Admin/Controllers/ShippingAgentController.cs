@@ -46,8 +46,8 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(shippingAgentModel);
 
-                Membership.CreateUser(shippingAgentModel.Username, shippingAgentModel.Password);
-                Roles.AddUserToRole(shippingAgentModel.Username, "ShippingAgent");
+                //Membership.CreateUser(shippingAgentModel.Username, shippingAgentModel.Password);
+                //Roles.AddUserToRole(shippingAgentModel.Username, "ShippingAgent");
 
                 var shippingAgent = new ShippingAgent
                                         {
@@ -65,8 +65,8 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             }
             catch
             {
-                if (Membership.GetUser(shippingAgentModel.Username) != null)
-                    Membership.DeleteUser(shippingAgentModel.Username);
+                //if (Membership.GetUser(shippingAgentModel.Username) != null)
+                    //Membership.DeleteUser(shippingAgentModel.Username);
 
                 return View();
             }

@@ -8,6 +8,7 @@ using Logistikcenter.Services.Lingo;
 using Logistikcenter.Web.Persistence;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
@@ -76,7 +77,8 @@ namespace Logistikcenter.Web
         static ISessionFactory BuildSessionFactory()
         {
             return Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("Logistikcenter")).ShowSql())
+                .Database(MsSqlCeConfiguration.Standard.ConnectionString(c => c.FromConnectionStringWithKey("Logistikcenter")).ShowSql())
+                //.Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("Logistikcenter")).ShowSql())
                 //.Database(SQLiteConfiguration.Standard.UsingFile(Sqlite).ShowSql)
                 //.Database(SQLiteConfiguration.Standard.InMemory)                
                 //.Mappings(m => m.FluentMappings.AddFromAssemblyOf<Customer>())                
@@ -87,7 +89,7 @@ namespace Logistikcenter.Web
 
         static void BuildSchema(Configuration configuration)
         {            
-            // new SchemaExport(configuration).Create(false, true);
+             new SchemaExport(configuration).Create(false, true);
         }
     }
 }

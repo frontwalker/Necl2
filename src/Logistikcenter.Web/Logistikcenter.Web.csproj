@@ -67,6 +67,9 @@
     <Reference Include="StructureMap">
       <HintPath>..\..\lib\StructureMap\StructureMap.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -99,6 +102,10 @@
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\TransportController.cs" />
     <Compile Include="Extensions\RadioButtonExtensions.cs" />
+    <Compile Include="Providers\SqlCeMembershipProvider.cs" />
+    <Compile Include="Providers\SqlCeMembershipUtils.cs" />
+    <Compile Include="Providers\SqlCeProfileProvider.cs" />
+    <Compile Include="Providers\SqlCeRoleProvider.cs" />
     <Compile Include="Models\RouteModel.cs" />
     <Compile Include="Models\TransportModel.cs" />
     <Compile Include="Persistence\NHibernateRepository.cs" />
@@ -111,6 +118,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnetdb.sdf" />
+    <Content Include="App_Data\logistikcenter.sdf" />
     <Content Include="Content\Images\ArrowBig.gif" />
     <Content Include="Content\Images\ArrowSmall.gif" />
     <Content Include="Content\Images\Customer\DHL.gif" />
@@ -190,7 +199,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\API\Models\" />
     <Folder Include="Areas\API\Views\Shared\" />
