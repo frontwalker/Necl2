@@ -49,8 +49,8 @@ namespace Logistikcenter.Web
 
         public static void AddRolesForApplication()
         {
-            //if (!Roles.RoleExists("ShippingAgent"))
-              //  Roles.CreateRole("ShippingAgent");
+            if (!Roles.RoleExists("ShippingAgent"))
+                Roles.CreateRole("ShippingAgent");
         }
     }
 
@@ -89,7 +89,7 @@ namespace Logistikcenter.Web
 
         static void BuildSchema(Configuration configuration)
         {            
-             new SchemaExport(configuration).Create(false, true);
+             //new SchemaExport(configuration).Create(false, true);
         }
     }
 }

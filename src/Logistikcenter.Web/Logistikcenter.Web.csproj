@@ -148,7 +148,9 @@
     <EmbeddedResource Include="Persistence\Mappings\Route.hbm.xml" />
     <EmbeddedResource Include="Persistence\Mappings\TransportBase.hbm.xml" />
     <EmbeddedResource Include="Persistence\Mappings\TransportUnit.hbm.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
