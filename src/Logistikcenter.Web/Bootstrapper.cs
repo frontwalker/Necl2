@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System.Web.Security;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using Logistikcenter.Domain;
@@ -43,6 +44,12 @@ namespace Logistikcenter.Web
         {
             var bootstrapper = new Bootstrapper();
             return bootstrapper.GetContainer();
+        }
+
+        public static void AddRolesForApplication()
+        {
+            //if (!Roles.RoleExists("ShippingAgent"))
+              //  Roles.CreateRole("ShippingAgent");
         }
     }
 

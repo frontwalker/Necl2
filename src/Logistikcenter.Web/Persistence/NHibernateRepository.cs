@@ -28,6 +28,7 @@ namespace Logistikcenter.Web.Persistence
         public void Update(object entity)
         {
             _session.Update(entity);
+            _session.Flush();
         }
 
         public void Delete<T>(long id)

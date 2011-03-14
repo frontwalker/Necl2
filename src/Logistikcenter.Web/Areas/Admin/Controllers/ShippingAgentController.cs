@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using Logistikcenter.Domain;
 using Logistikcenter.Web.Areas.Admin.Models;
 
@@ -41,8 +42,12 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
         public ActionResult Create(ShippingAgentModel shippingAgentModel)
         {
             try
-            {                
-                ValidateModel(shippingAgentModel);
+            {
+                if (!ModelState.IsValid)
+                    return View(shippingAgentModel);
+
+                Membership.CreateUser(shippingAgentModel.Username, shippingAgentModel.Password);
+                Roles.AddUserToRole(shippingAgentModel.Username, "ShippingAgent");
 
                 var shippingAgent = new ShippingAgent
                                         {
@@ -51,7 +56,7 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                                             FirstName = shippingAgentModel.FirstName,
                                             LastName = shippingAgentModel.LastName,
                                             CustomerType = CustomerType.Company,
-                                            Password = shippingAgentModel.Username /* ska vi hantera inloggning mot denna tabell eller använda asp.net membership? */
+                                            Password = shippingAgentModel.Password /* ska vi hantera inloggning mot denna tabell eller använda asp.net membership? */
                                         };
 
                 _repository.Save(shippingAgent);
@@ -60,6 +65,9 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             }
             catch
             {
+                if (Membership.GetUser(shippingAgentModel.Username) != null)
+                    Membership.DeleteUser(shippingAgentModel.Username);
+
                 return View();
             }
         }
@@ -82,6 +90,9 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return View(shippingAgentModel);
+
                 var shippingAgent = _repository.Query<ShippingAgent>().Where(s => s.Id == id).Single();
                 
                 shippingAgent.CompanyName = shippingAgentModel.CompanyName;

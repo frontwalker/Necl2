@@ -15,5 +15,8 @@ namespace Logistikcenter.Web.Areas.Admin.Models
         [Required]
         [Display(Name = "Användarnamn")]
         public string Username { get; set; }
+        [Required]
+        [Display(Name = "Lösenord")]
+        public string Password { get; set; }
     }
 }
