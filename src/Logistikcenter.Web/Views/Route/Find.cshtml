@@ -44,12 +44,18 @@
             <td>@route.Information</td>
             <td>@route.Cost</td>
 
-            @{                                                                                  
-                string legs = Json.Encode(route.Legs.Select(l => l.Id));
-                var b64 = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(legs));                                                
+            @{                                 
+                var newbooking = new Logistikcenter.Web.Models.NewBookingModel();
+
+                newbooking.AddLegs(route.Legs.Select(l => l.Id).AsEnumerable<long>());
+                newbooking.Volume = 0;
+                newbooking.NumeberOfPackages = 0;
+
+                string booking = Json.Encode(newbooking);
+                var b64 = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(booking));                                                
              }
 
-            <td><a href="/Booking?info=@b64">Boka</a></td>
+            <td><a href="/Booking/Create?info=@b64">Boka</a></td>
         </tr>
         <tr id="@rowId" style="display:none">
             <td>&nbsp;</td>
