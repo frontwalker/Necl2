@@ -5,6 +5,7 @@ using FluentNHibernate.Cfg.Db;
 using Logistikcenter.Domain;
 using Logistikcenter.Services;
 using Logistikcenter.Services.Lingo;
+using Logistikcenter.Web.Models;
 using Logistikcenter.Web.Persistence;
 using NHibernate;
 using NHibernate.Cfg;
@@ -49,8 +50,23 @@ namespace Logistikcenter.Web
 
         public static void AddRolesForApplication()
         {
-            if (!Roles.RoleExists("ShippingAgent"))
-                Roles.CreateRole("ShippingAgent");
+            AddRole("Administrators");
+            AddRole("ShippingAgent");            
+        }
+
+        private static void AddRole(string roleName)
+        {
+            if (!Roles.RoleExists(roleName))
+                Roles.CreateRole(roleName);
+        }
+
+        public static void AddAdministratorUser()
+        {
+            if (Membership.GetUser("Administrator") == null)
+                Membership.CreateUser("Administrator", "Administrator2011", "admin@logistikcenter.se");
+
+            if (!Roles.IsUserInRole("Administrator", "Administrators"))
+                Roles.AddUserToRole("Administrator", "Administrators");            
         }
     }
 
@@ -61,7 +77,7 @@ namespace Logistikcenter.Web
             For<ITransportOptimizationService>().HttpContextScoped().Use<LingoTransportOptimizationService>()
                 .Ctor<string>("modelPath").Is(@"C:\Dev\Necl2\src\Logistikcenter.Services\Lingo\Models\prototypCost.lng")
                 .Ctor<string>("inputFileFolder").Is(@"C:\Temp")
-                .Ctor<string>("logFileFolder").Is(@"C:\Temp\Logs");
+                .Ctor<string>("logFileFolder").Is(@"C:\Temp\Logs");            
         }
     }
 

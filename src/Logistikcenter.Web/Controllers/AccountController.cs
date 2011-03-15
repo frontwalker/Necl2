@@ -42,7 +42,7 @@ namespace Logistikcenter.Web.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Transport");
                     }
                 }
                 else
@@ -63,7 +63,7 @@ namespace Logistikcenter.Web.Controllers
         {
             FormsService.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Transport");
         }
 
         // **************************************
@@ -87,7 +87,7 @@ namespace Logistikcenter.Web.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Transport");
                 }
                 else
                 {

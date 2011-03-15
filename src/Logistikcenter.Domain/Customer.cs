@@ -51,13 +51,13 @@ namespace Logistikcenter.Domain
             get { return username; }
             set { username = value; }
         }
-        private string password;
+        //private string password;
 
-        public virtual string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
+        //public virtual string Password
+        //{
+        //    get { return password; }
+        //    set { password = value; }
+        //}
 
         protected Customer()
         { 
@@ -69,23 +69,23 @@ namespace Logistikcenter.Domain
             this.id = id;
         }
 
-        public Customer(string companyName,string userName,string password)
+        public Customer(string companyName,string userName /*,string password */)
         {
             this.companyName = companyName;
             this.username = userName;
-            this.password = password;
+            //this.password = password;
             this.customerType = CustomerType.Company;
         }
 
-        public virtual void Authenticate(string password)
-        {
-            //invalid password?
-            if (this.Password != password)
-            {
-                throw new BadPasswordException();
-            }
+        //public virtual void Authenticate(string password)
+        //{
+        //    //invalid password?
+        //    if (this.Password != password)
+        //    {
+        //        throw new BadPasswordException();
+        //    }
 
-        }
+        //}
 
 
 

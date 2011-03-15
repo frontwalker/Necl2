@@ -1,12 +1,14 @@
 ﻿@{    
-    var siteMap = SiteMap.RootNode.ChildNodes;
+    var siteMap = SiteMap.RootNode.ChildNodes;        
 }
 
 <ul id="menu" class="tabmenu">
     
     @foreach (SiteMapNode node in siteMap)
     {
-        <li>@Html.ActionLink(@node.Title, "Index", @node.Url)</li>
+        <li>
+            <a href="@node.Url">@node.Title</a>                
+        </li>
     }
 
 </ul>

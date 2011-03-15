@@ -9,8 +9,9 @@
 		<property name="CompanyName" type="String" length="255" access="field.camelcase" not-null="false"/>
 		<property name="CustomerType" type="int" access="field.camelcase" not-null="true"/>
 		<property name="Username" type="String" length="255" access="field.camelcase" not-null="true"/>
+    <!--
 		<property name="Password" type="String" length="255" access="field.camelcase" not-null="true"/>
-
+    -->
 		<joined-subclass name="ShippingAgent" table="ShippingAgent">
 			<key column="CustomerId"/>
 	</joined-subclass>

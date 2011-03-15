@@ -36,6 +36,7 @@ namespace Logistikcenter.Web
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(Bootstrapper.GetInitializedContainer()));
 
             Bootstrapper.AddRolesForApplication();
+            Bootstrapper.AddAdministratorUser();
 
             log4net.Config.XmlConfigurator.Configure();
         }

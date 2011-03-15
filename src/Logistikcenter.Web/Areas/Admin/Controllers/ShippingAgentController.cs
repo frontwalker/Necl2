@@ -1,22 +1,22 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using System.Web.Security;
 using Logistikcenter.Domain;
 using Logistikcenter.Web.Areas.Admin.Models;
+using Logistikcenter.Web.Services;
 
 namespace Logistikcenter.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Administrators")]
     public class ShippingAgentController : Controller
     {
         private readonly IRepository _repository;
+        private readonly IUserService _userService;
 
-        public ShippingAgentController(IRepository repository)
+        public ShippingAgentController(IRepository repository, IUserService userService)
         {
             _repository = repository;
+            _userService = userService;
         }
-
-        //
-        // GET: /Admin/ShippingAgent/
 
         public ActionResult Index()
         {
@@ -27,16 +27,10 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             return View(shippingAgents);
         }
 
-        //
-        // GET: /Admin/ShippingAgent/Create
-
         public ActionResult Create()
         {
             return View();
         } 
-
-        //
-        // POST: /Admin/ShippingAgent/Create
 
         [HttpPost]
         public ActionResult Create(ShippingAgentModel shippingAgentModel)
@@ -46,8 +40,7 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(shippingAgentModel);
 
-                //Membership.CreateUser(shippingAgentModel.Username, shippingAgentModel.Password);
-                //Roles.AddUserToRole(shippingAgentModel.Username, "ShippingAgent");
+                _userService.AddShippingAgent(shippingAgentModel.Username, shippingAgentModel.Password);
 
                 var shippingAgent = new ShippingAgent
                                         {
@@ -55,8 +48,7 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                                             CompanyName = shippingAgentModel.CompanyName,
                                             FirstName = shippingAgentModel.FirstName,
                                             LastName = shippingAgentModel.LastName,
-                                            CustomerType = CustomerType.Company,
-                                            Password = shippingAgentModel.Password /* ska vi hantera inloggning mot denna tabell eller använda asp.net membership? */
+                                            CustomerType = CustomerType.Company                                           
                                         };
 
                 _repository.Save(shippingAgent);
@@ -65,16 +57,11 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             }
             catch
             {
-                //if (Membership.GetUser(shippingAgentModel.Username) != null)
-                    //Membership.DeleteUser(shippingAgentModel.Username);
-
+                _userService.Remove(shippingAgentModel.Username);
                 return View();
             }
         }
         
-        //
-        // GET: /Admin/ShippingAgent/Edit/5
- 
         public ActionResult Edit(int id)
         {
             var shippingAgentModel = GetModel(id);
@@ -82,17 +69,11 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             return View(shippingAgentModel);
         }
 
-        //
-        // POST: /Admin/ShippingAgent/Edit/5
-
         [HttpPost]
         public ActionResult Edit(int id, ShippingAgentModel shippingAgentModel)
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return View(shippingAgentModel);
-
                 var shippingAgent = _repository.Query<ShippingAgent>().Where(s => s.Id == id).Single();
                 
                 shippingAgent.CompanyName = shippingAgentModel.CompanyName;
@@ -109,17 +90,11 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
             }
         }
 
-        //
-        // GET: /Admin/ShippingAgent/Delete/5
- 
         public ActionResult Delete(int id)
         {
             var shippingAgentModel = GetModel(id);
             return View(shippingAgentModel);
         }
-
-        //
-        // POST: /Admin/ShippingAgent/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
@@ -130,7 +105,10 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
 
                 // vad ska hända med ev Legs som denna har? Databasen kräver nog borttag, men är det rätt? 
                 // ska det ens gå att ta bort?
- 
+
+                var shippingAgentModel = GetModel(id);
+                _userService.Remove(shippingAgentModel.Username);
+
                 _repository.Delete<ShippingAgent>(id);
 
                 return RedirectToAction("Index");
