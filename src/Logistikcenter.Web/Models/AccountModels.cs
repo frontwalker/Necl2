@@ -13,18 +13,15 @@ namespace Logistikcenter.Web.Models
     public class ChangePasswordModel
     {
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [DataType(DataType.Password)]        
         public string OldPassword { get; set; }
 
         [Required]
         [ValidatePasswordLength]
-        [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [DataType(DataType.Password)]        
         public string NewPassword { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
+        [DataType(DataType.Password)]        
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

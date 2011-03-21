@@ -36,8 +36,8 @@ namespace Logistikcenter.Web.Controllers
             var model = new RouteModel
                             {                           
                                 Packages = transportModel.Packages,
-                                PackageType = transportModel.PackageTypes.Where(pt => pt.Value == transportModel.PackageType.ToString()).Select(pt => pt.Text).Single(),
-                                DeliveryInformation = transportModel.DateRestrictionTypes.Where(dr => dr.Value == transportModel.DateRestrictionType.ToString()).Select(dr => dr.Text).Single() + " " + transportModel.Date.Value.ToString("yyyy-MM-dd") + " " + transportModel.Time.ToString("00") + ":00",
+                                //PackageType = transportModel.PackageTypes.Where(pt => pt.Value == transportModel.PackageType.ToString()).Select(pt => pt.Text).Single(),
+                                //DeliveryInformation = transportModel.DateRestrictionTypes.Where(dr => dr.Value == transportModel.DateRestrictionType.ToString()).Select(dr => dr.Text).Single() + " " + transportModel.Date.Value.ToString("yyyy-MM-dd") + " " + transportModel.Time.ToString("00") + ":00",
                                 Volume = transportModel.Volume.ToString(),
                                 Origin = origin.Name,
                                 Destination = destination.Name,

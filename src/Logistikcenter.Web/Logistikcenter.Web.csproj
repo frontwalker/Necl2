@@ -96,6 +96,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Global.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Global.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ViewModels.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ViewModels.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModels.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShippingAgentController.cs" />
@@ -107,6 +127,7 @@
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\TransportController.cs" />
     <Compile Include="Extensions\RadioButtonExtensions.cs" />
+    <Compile Include="Localization\AnnotationsAndConventionsBasedModelMetaDataProvider.cs" />
     <Compile Include="Models\BookingModel.cs" />
     <Compile Include="Providers\SqlCeMembershipProvider.cs" />
     <Compile Include="Providers\SqlCeMembershipUtils.cs" />
@@ -147,6 +168,23 @@
     <Content Include="Content\Images\SmallCal.gif" />
     <Content Include="Content\Images\train_startpage.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="App_GlobalResources\ViewModels.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewModels.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\ViewModels.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewModels.en.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Global.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Global.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.en.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="Persistence\Mappings\Customer.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -16,7 +16,7 @@
 <form id="transportRequest" action="/Route/Find" method="get">    
 
     <fieldset id="destination" class="transportRequestFieldset">
-        <legend>Destination</legend>
+        <legend>@ViewBag.Destination</legend>
         <div class="ui-widget">
             @Html.LabelFor(m => m.Origin)    
             @Html.TextBoxFor(m => m.Origin)
@@ -28,30 +28,30 @@
     </fieldset>
 
     <fieldset id="timeanddate" class="transportRequestFieldset">
-        <legend>Tid och datum</legend>            
+        <legend>@ViewBag.Tid_och_datum</legend>            
         @Html.LabelFor(m => m.DateRestrictionType)      
-        @Html.DropDownListFor(m => m.DateRestrictionType, Model.DateRestrictionTypes)
+        @Html.DropDownListFor(m => m.DateRestrictionType, ViewBag.DateRestrictionTypes as IEnumerable<SelectListItem>)
 
         @Html.LabelFor(m => m.Time)            
-        @Html.DropDownListFor(m => m.Time, Model.Hours)
+        @Html.DropDownListFor(m => m.Time, ViewBag.Hours as IEnumerable<SelectListItem>)
 
         @Html.LabelFor(m => m.Date)            
         @Html.EditorFor(m => m.Date)
     </fieldset>
         
     <fieldset id="packageInformation" class="transportRequestFieldset">
-        <legend>Godsinformation</legend>
+        <legend>@ViewBag.Godsinformation</legend>
         <div class="blockLeft">
             @Html.LabelFor(m => m.Packages)
             @Html.TextBoxFor(m => m.Packages)
         </div>
         <div class="blockLeft">
             @Html.LabelFor(m => m.PackageType)                
-            @Html.RadioButtonListFor(m => m.PackageType, Model.PackageTypes)
+            @Html.RadioButtonListFor(m => m.PackageType, ViewBag.PackageTypes as IEnumerable<SelectListItem>)
             </div>
         <div class="blockLeft">
             @Html.LabelFor(m => m.SelectedVolumeType)         
-            @Html.RadioButtonListFor(m => m.SelectedVolumeType, Model.SelectedVolumeTypes)
+            @Html.RadioButtonListFor(m => m.SelectedVolumeType, ViewBag.SelectedVolumeTypes as string[])
         </div>                  
         <div class="blockLeft">
             @Html.LabelFor(m => m.Weight)

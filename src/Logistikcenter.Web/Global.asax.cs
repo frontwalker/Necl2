@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Logistikcenter.Web.Localization;
 using StructureMap;
 
 namespace Logistikcenter.Web
@@ -34,6 +35,7 @@ namespace Logistikcenter.Web
             RegisterRoutes(RouteTable.Routes);
 
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(Bootstrapper.GetInitializedContainer()));
+            ModelMetadataProviders.Current = new AnnotationsAndConventionsBasedModelMetaDataProvider();
 
             Bootstrapper.AddRolesForApplication();
             Bootstrapper.AddAdministratorUser();
