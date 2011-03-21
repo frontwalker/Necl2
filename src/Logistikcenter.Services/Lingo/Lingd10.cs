@@ -69,36 +69,36 @@ namespace Logistikcenter.Services.Lingo
          *                                                                   *
          *********************************************************************/
 
-        [DllImport("lingd10.dll", EntryPoint = "LSclearPointersLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSclearPointersLng")]
         public static extern int LSclearPointersLng(int pLingoEnv);
 
-        [DllImport("lingd10.dll", EntryPoint = "LScloseLogFileLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LScloseLogFileLng")]
         public static extern int LScloseLogFileLng(int pLingoEnv);
 
-        [DllImport("lingd10.dll", EntryPoint = "LScreateEnvLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LScreateEnvLng")]
         public static extern int LScreateEnvLng();
 
-        [DllImport("lingd10.dll", EntryPoint = "LSdeleteEnvLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSdeleteEnvLng")]
         public static extern int LSdeleteEnvLng(int pLingoEnv);
 
-        [DllImport("lingd10.dll", EntryPoint = "LSexecuteScriptLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSexecuteScriptLng")]
         public static extern int LSexecuteScriptLng(int pLingoEnv,
            string pcScript);
 
-        [DllImport("lingd10.dll", EntryPoint = "LSgetCallbackInfoLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSgetCallbackInfoLng")]
         public static extern int LSgetCallbackInfoLng(int pLingoEnv,
            int nObject, ref int pnResult);
 
-        [DllImport("lingd10.dll", EntryPoint = "LSopenLogFileLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSopenLogFileLng")]
         public static extern int LSopenLogFileLng(int pLingoEnv,
            string pcLogFile);
 
-        [DllImport("lingd10.dll", EntryPoint = "LSsetCallbackSolverLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSsetCallbackSolverLng")]
         public static extern int LSsetCallbackSolverLng(int pLingoEnv,
            lingo.typCallback pSolverCallbackFunction,
               [MarshalAs(UnmanagedType.AsAny)] object pMyData);
 
-        [DllImport("lingd10.dll", EntryPoint = "LSsetPointerLng")]
+        [DllImport("C:\\LINGO12\\Lingd12.dll", EntryPoint = "LSsetPointerLng")]
         public static extern int LSsetPointerLng(int pLingoEnv,
            ref double pdPointer, ref int pnPointersNow);
 

@@ -34,7 +34,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;/unsafe</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -129,6 +129,11 @@
     <Compile Include="Extensions\RadioButtonExtensions.cs" />
     <Compile Include="Localization\ConventionsBasedModelMetaDataProvider.cs" />
     <Compile Include="Models\BookingModel.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Providers\SqlCeMembershipProvider.cs" />
     <Compile Include="Providers\SqlCeMembershipUtils.cs" />
     <Compile Include="Providers\SqlCeProfileProvider.cs" />
@@ -147,7 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnetdb.sdf" />
-    <Content Include="App_Data\logistikcenter.sdf" />
+    <Content Include="App_Data\logistikcenter.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Images\ArrowBig.gif" />
     <Content Include="Content\Images\ArrowSmall.gif" />
     <Content Include="Content\Images\Customer\DHL.gif" />
@@ -310,6 +317,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Booking\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
