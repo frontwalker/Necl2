@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
   <data name="Godset_skall_skickas_efter" xml:space="preserve">
     <value>Godset skall skickas efter</value>
   </data>
@@ -126,10 +132,19 @@
   <data name="Kolli" xml:space="preserve">
     <value>Kolli</value>
   </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
   <data name="Paket" xml:space="preserve">
     <value>Paket</value>
   </data>
   <data name="Pall" xml:space="preserve">
     <value>Pall</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
   </data>
 </root>

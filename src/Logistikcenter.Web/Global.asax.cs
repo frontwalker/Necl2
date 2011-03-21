@@ -35,7 +35,7 @@ namespace Logistikcenter.Web
             RegisterRoutes(RouteTable.Routes);
 
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(Bootstrapper.GetInitializedContainer()));
-            ModelMetadataProviders.Current = new AnnotationsAndConventionsBasedModelMetaDataProvider();
+            ModelMetadataProviders.Current = new ConventionsBasedModelMetaDataProvider();
 
             Bootstrapper.AddRolesForApplication();
             Bootstrapper.AddAdministratorUser();

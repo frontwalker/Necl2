@@ -127,7 +127,7 @@
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\TransportController.cs" />
     <Compile Include="Extensions\RadioButtonExtensions.cs" />
-    <Compile Include="Localization\AnnotationsAndConventionsBasedModelMetaDataProvider.cs" />
+    <Compile Include="Localization\ConventionsBasedModelMetaDataProvider.cs" />
     <Compile Include="Models\BookingModel.cs" />
     <Compile Include="Providers\SqlCeMembershipProvider.cs" />
     <Compile Include="Providers\SqlCeMembershipUtils.cs" />
