@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Logistikmäklaren</title>
+    <title>@ViewBag.PageTitle</title>
 
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
@@ -22,8 +22,10 @@
     <div class="page">
         
         <div id="top">            
-            @Html.Partial("_flagMenu")  
-            @Html.Partial("_topMenu")                      
+<!--            
+            @Html.Partial("_flagMenu") -->   
+            @Html.Partial("_topMenu")
+                     
         </div>                  
 
         <div id="header">  

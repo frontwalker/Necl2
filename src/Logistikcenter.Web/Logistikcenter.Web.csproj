@@ -101,6 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>About.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\About.en.designer.cs">
+      <DependentUpon>About.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_GlobalResources\Global.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +206,10 @@
     <Content Include="App_GlobalResources\About.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>About.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\About.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>About.en.designer.cs</LastGenOutput>
     </Content>
     <EmbeddedResource Include="Persistence\Mappings\Customer.hbm.xml">
       <SubType>Designer</SubType>

@@ -63,27 +63,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Om Logistikcenter.
         /// </summary>
-        internal static string pageTitle {
+        internal static string page_title {
             get {
-                return ResourceManager.GetString("pageTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Detta är en del av NECL2..
-        /// </summary>
-        internal static string paragraph1 {
-            get {
-                return ResourceManager.GetString("paragraph1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Om Logistikcenter.
-        /// </summary>
-        internal static string windowTitle {
-            get {
-                return ResourceManager.GetString("windowTitle", resourceCulture);
+                return ResourceManager.GetString("page_title", resourceCulture);
             }
         }
     }

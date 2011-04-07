@@ -13,7 +13,8 @@ namespace Logistikcenter.Web.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.title = "Om Logistikcenter";
+            ViewBag.PageTitle = @Resources.Global.AppName + " - " + "About" ;
+            ViewBag.title = @Resources.About.page_title;
 
             return View();
         }
