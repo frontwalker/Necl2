@@ -30,11 +30,13 @@ namespace Logistikcenter.Web.Controllers
 
             ViewBag.Hours = Hours;
 
-            ViewBag.SelectedVolumeTypes = new[] { "Volym m3", "Flakmeter", "Pallplats" };
+            ViewBag.SelectedVolumeTypes = new[] { Resources.Global.volym_m3 , Resources.Global.flakmeter ,Resources.Global.pallplats };
 
             ViewBag.Destination = Resources.Global.Destination;
             ViewBag.Tid_och_datum = Resources.Global.Tid_och_datum;
             ViewBag.Godsinformation = Resources.Global.Godsinformation;
+
+            ViewBag.PageTitle = Resources.Global.Transport_sök_transport;
         }
 
         private static IEnumerable<SelectListItem> Hours

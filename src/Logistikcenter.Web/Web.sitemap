@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode title="Root" description="Root LogistikMäklaren" >
-    <siteMapNode title="Sök transport" description="Sök transport" url="Transport" />
-    <siteMapNode title="Leverantör" description="Leverantlör" url="Supplier" />
-    <siteMapNode title="Speditör" description="Speditör" url="ShippingAgent" />
-    <siteMapNode title="Information" description="Information" url="Information" />
-    <siteMapNode title="Kundservice" description="Kundservicve" url="Support" />
-    <siteMapNode title="Press" description="Press" url="Press" />
-    <siteMapNode title="Om Logistikmäklaren" description="Om Logistikmäklaren" url="About" />
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
+  <siteMapNode title="$resources:Global,Sitemap_root" description="$resources:Global,Sitemap_root_desc" >
+    <siteMapNode title="$resources:Global,Sitemap_transport" description="$resources:Global,Sitemap_transport_desc" url="Transport" />
+    <siteMapNode title="$resources:Global,Sitemap_supplier" description="$resources:Global,Sitemap_supplier_desc" url="Supplier" />
+    <siteMapNode title="$resources:Global,Sitemap_shippingagent" description="$resources:Global,Sitemap_shippingagent_desc" url="ShippingAgent" />
+    <siteMapNode title="$resources:Global,Sitemap_information" description="$resources:Global,Sitemap_information_desc" url="Information" />
+    <siteMapNode title="$resources:Global,Sitemap_support" description="$resources:Global,Sitemap_support_desc" url="Support" />
+    <siteMapNode title="$resources:Global,Sitemap_press" description="$resources:Global,Sitemap_press_desc" url="Press" />
+    <siteMapNode title="$resources:Global,Sitemap_about" description="$resources:Global,Sitemap_about_desc." url="About" />
   </siteMapNode>        
 </siteMap>

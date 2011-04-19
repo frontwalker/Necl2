@@ -1,11 +1,11 @@
 ﻿<ul id="logonMenu" class="tabmenu">
 @if(Request.IsAuthenticated) 
 {    
-    <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
+    <li>@Html.ActionLink(@Resources.Global.logonpartial_logoff, "LogOff", "Account")</li>
 }
 else
 {
-    <li>@Html.ActionLink("Bli kund", "Register", "Account")</li>
-    <li>@Html.ActionLink("Log On", "LogOn", "Account")</li>
+    <li>@Html.ActionLink(@Resources.Global.logonpartial_register, "Register", "Account")</li>
+    <li>@Html.ActionLink(@Resources.Global.logonpartial_logon, "LogOn", "Account")</li>
 }
 </ul>

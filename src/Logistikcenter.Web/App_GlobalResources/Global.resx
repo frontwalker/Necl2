@@ -129,6 +129,9 @@
   <data name="FirstName" xml:space="preserve">
     <value>Förnamn</value>
   </data>
+  <data name="flakmeter" xml:space="preserve">
+    <value>Flakmeter</value>
+  </data>
   <data name="Godset_skall_skickas_efter" xml:space="preserve">
     <value>Godset skall skickas efter</value>
   </data>
@@ -150,13 +153,91 @@
   <data name="Pall" xml:space="preserve">
     <value>Pall</value>
   </data>
+  <data name="pallplats" xml:space="preserve">
+    <value>Pallplats</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Lösenord</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Sök</value>
+  </data>
+  <data name="Sitemap_information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Sitemap_information_desc" xml:space="preserve">
+    <value>Information om Logistikmäklaren</value>
+  </data>
+  <data name="Sitemap_support" xml:space="preserve">
+    <value>Kundservice</value>
+  </data>
+  <data name="Sitemap_support_desc" xml:space="preserve">
+    <value>Kundservice</value>
+  </data>
+  <data name="Sitemap_supplier" xml:space="preserve">
+    <value>Leverantör</value>
+  </data>
+  <data name="Sitemap_supplier_desc" xml:space="preserve">
+    <value>Sida för Leverantörer</value>
+  </data>
+  <data name="Sitemap_about" xml:space="preserve">
+    <value>Om logistikmäklaren</value>
+  </data>
+  <data name="Sitemap_about_desc" xml:space="preserve">
+    <value>Allmän information om logistikmäklaren och moderprojektet North East Cargo Link II</value>
+  </data>
+  <data name="Sitemap_press" xml:space="preserve">
+    <value>Press</value>
+  </data>
+  <data name="Sitemap_press_desc" xml:space="preserve">
+    <value>Information till nytta för media</value>
+  </data>
+  <data name="Sitemap_root" xml:space="preserve">
+    <value>Hem</value>
+  </data>
+  <data name="Sitemap_root_desc" xml:space="preserve">
+    <value>Startsida för Logistikmäklaren</value>
+  </data>
+  <data name="Sitemap_shippingagent" xml:space="preserve">
+    <value>Speditör</value>
+  </data>
+  <data name="Sitemap_shippingagent_desc" xml:space="preserve">
+    <value>Sida för speditörer</value>
+  </data>
+  <data name="Sitemap_transport" xml:space="preserve">
+    <value>Sök Transport</value>
+  </data>
+  <data name="Sitemap_transport_desc" xml:space="preserve">
+    <value>Hitta en transport för vara</value>
   </data>
   <data name="Tid_och_datum" xml:space="preserve">
     <value>Tid och datum</value>
   </data>
+  <data name="Transport_sök_transport" xml:space="preserve">
+    <value>Sök Transport</value>
+  </data>
   <data name="Username" xml:space="preserve">
     <value>Användarnamn</value>
+  </data>
+  <data name="volym_m3" xml:space="preserve">
+    <value>Volym (m&lt;sup&gt;3&lt;/sup&gt;)</value>
+  </data>
+  <data name="customerbar_supporters" xml:space="preserve">
+    <value>Våra intressenter</value>
+  </data>
+  <data name="logonpartial_logoff" xml:space="preserve">
+    <value>Logga av</value>
+  </data>
+  <data name="logonpartial_logon" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="logonpartial_register" xml:space="preserve">
+    <value>Ny Användare</value>
+  </data>
+  <data name="topmenu_contact" xml:space="preserve">
+    <value>Kontakta Oss!</value>
+  </data>
+  <data name="topmenu_faq" xml:space="preserve">
+    <value>Frågor och svar</value>
   </data>
 </root>

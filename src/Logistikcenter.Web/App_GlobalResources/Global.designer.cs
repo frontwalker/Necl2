@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Våra intressenter.
+        /// </summary>
+        internal static string customerbar_supporters {
+            get {
+                return ResourceManager.GetString("customerbar_supporters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destination.
         /// </summary>
         internal static string Destination {
@@ -93,6 +102,15 @@ namespace Resources {
         internal static string FirstName {
             get {
                 return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flakmeter.
+        /// </summary>
+        internal static string flakmeter {
+            get {
+                return ResourceManager.GetString("flakmeter", resourceCulture);
             }
         }
         
@@ -142,6 +160,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logga av.
+        /// </summary>
+        internal static string logonpartial_logoff {
+            get {
+                return ResourceManager.GetString("logonpartial_logoff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logga in.
+        /// </summary>
+        internal static string logonpartial_logon {
+            get {
+                return ResourceManager.GetString("logonpartial_logon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ny Användare.
+        /// </summary>
+        internal static string logonpartial_register {
+            get {
+                return ResourceManager.GetString("logonpartial_register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paket.
         /// </summary>
         internal static string Paket {
@@ -160,11 +205,173 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pallplats.
+        /// </summary>
+        internal static string pallplats {
+            get {
+                return ResourceManager.GetString("pallplats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lösenord.
         /// </summary>
         internal static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sök.
+        /// </summary>
+        internal static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Om logistikmäklaren.
+        /// </summary>
+        internal static string Sitemap_about {
+            get {
+                return ResourceManager.GetString("Sitemap_about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allmän information om logistikmäklaren och moderprojektet North East Cargo Link II.
+        /// </summary>
+        internal static string Sitemap_about_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_about_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string Sitemap_information {
+            get {
+                return ResourceManager.GetString("Sitemap_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information om Logistikmäklaren.
+        /// </summary>
+        internal static string Sitemap_information_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_information_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press.
+        /// </summary>
+        internal static string Sitemap_press {
+            get {
+                return ResourceManager.GetString("Sitemap_press", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information till nytta för media.
+        /// </summary>
+        internal static string Sitemap_press_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_press_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hem.
+        /// </summary>
+        internal static string Sitemap_root {
+            get {
+                return ResourceManager.GetString("Sitemap_root", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startsida för Logistikmäklaren.
+        /// </summary>
+        internal static string Sitemap_root_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_root_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speditör.
+        /// </summary>
+        internal static string Sitemap_shippingagent {
+            get {
+                return ResourceManager.GetString("Sitemap_shippingagent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sida för speditörer.
+        /// </summary>
+        internal static string Sitemap_shippingagent_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_shippingagent_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leverantör.
+        /// </summary>
+        internal static string Sitemap_supplier {
+            get {
+                return ResourceManager.GetString("Sitemap_supplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sida för Leverantörer.
+        /// </summary>
+        internal static string Sitemap_supplier_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_supplier_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kundservice.
+        /// </summary>
+        internal static string Sitemap_support {
+            get {
+                return ResourceManager.GetString("Sitemap_support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kundservice.
+        /// </summary>
+        internal static string Sitemap_support_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_support_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sök Transport.
+        /// </summary>
+        internal static string Sitemap_transport {
+            get {
+                return ResourceManager.GetString("Sitemap_transport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hitta en transport för vara.
+        /// </summary>
+        internal static string Sitemap_transport_desc {
+            get {
+                return ResourceManager.GetString("Sitemap_transport_desc", resourceCulture);
             }
         }
         
@@ -178,11 +385,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kontakta Oss!.
+        /// </summary>
+        internal static string topmenu_contact {
+            get {
+                return ResourceManager.GetString("topmenu_contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frågor och svar.
+        /// </summary>
+        internal static string topmenu_faq {
+            get {
+                return ResourceManager.GetString("topmenu_faq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sök Transport.
+        /// </summary>
+        internal static string Transport_sök_transport {
+            get {
+                return ResourceManager.GetString("Transport_sök_transport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Användarnamn.
         /// </summary>
         internal static string Username {
             get {
                 return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volym (m&lt;sup&gt;3&lt;/sup&gt;).
+        /// </summary>
+        internal static string volym_m3 {
+            get {
+                return ResourceManager.GetString("volym_m3", resourceCulture);
             }
         }
     }

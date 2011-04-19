@@ -1,6 +1,6 @@
 ﻿<ul id="topMenu">   
-    <li>@Html.ActionLink("Frågor och svar", "FAQ", "Support")</li>
-    <li>@Html.ActionLink("Kontakta oss", "Contact", "About")</li>
+    <li>@Html.ActionLink(@Resources.Global.topmenu_faq, "FAQ", "Support")</li>
+    <li>@Html.ActionLink(@Resources.Global.Transport_sök_transport, "Contact", "About")</li>
     
     @if (User.IsInRole("Administrators")) { 
         <li>@Html.ActionLink("Admin", "Index", "Admin", new { area = "Admin" }, null)</li>

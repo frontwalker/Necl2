@@ -180,6 +180,7 @@
     <Content Include="Content\Images\FIflag.gif" />
     <Content Include="Content\Images\Help.gif" />
     <Content Include="Content\Images\LogoTop.gif" />
+    <Content Include="Content\Images\midnordic.gif" />
     <Content Include="Content\Images\NOflag.gif" />
     <Content Include="Content\Images\RoadTrainLoadingOff.jpg" />
     <Content Include="Content\Images\SEflag.gif" />
