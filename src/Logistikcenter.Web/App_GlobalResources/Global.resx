@@ -240,4 +240,7 @@
   <data name="topmenu_faq" xml:space="preserve">
     <value>Frågor och svar</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-post</value>
+  </data>
 </root>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Logistikcenter.Web.Areas.ShippingAgentContent.Models.LegModel>
+
+@{
+    ViewBag.Title = "LegModel Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>Designation</th>
+        <th>From</th>
+        <th>To</th>
+        <th>&nbsp</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.uniqueIdentifier
+        </td>
+        <td>
+            @item.origin.Name : @item.departureTime
+        </td>
+        <td>
+            @item.destination.Name : @item.arrivalTime
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","Leg" , new { d = item.id}, null ) |
+            @Html.ActionLink("Details", "Details", new { d = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { d = item.id })
+        </td>
+    </tr>
+}
+
+</table>

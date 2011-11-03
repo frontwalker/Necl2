@@ -17,6 +17,7 @@
             <th>Företagsnamn</th>
             <th>Förnamn</th>
             <th>Efternamn</th>
+            <th>E-post</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
         </tr>    
@@ -28,6 +29,7 @@
                 <td>@agent.CompanyName</td>
                 <td>@agent.FirstName</td>
                 <td>@agent.LastName</td>
+                <td>@agent.Email</td>
                 <td>@Html.ActionLink("Redigera", "Edit", "ShippingAgent", new { id = agent.Id }, null)</td>
                 <td>@Html.ActionLink("Ta bort", "Delete", "ShippingAgent", new { id = agent.Id }, null)</td>
             </tr>                

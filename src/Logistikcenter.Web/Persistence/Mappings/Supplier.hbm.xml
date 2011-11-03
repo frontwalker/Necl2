@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Logistikcenter.Domain" assembly="Logistikcenter.Domain">
+  <class name="Supplier" table="Supplier">
+    <id name="Id"  access="field.camelcase">
+      <generator class="native" />
+    </id>
+    <property name="FirstName" type="String" length="255" access="field.camelcase" not-null="false"/>
+    <property name="LastName" type="String" length="255" access="field.camelcase" not-null="false"/>
+    <property name="CompanyName" type="String" length="255" access="field.camelcase" not-null="false"/>
+    <property name="CustomerType" type="int" access="field.camelcase" not-null="true"/>
+    <property name="Username" type="String" length="255" access="field.camelcase" not-null="true"/>
+ 
+  </class>
+</hibernate-mapping>

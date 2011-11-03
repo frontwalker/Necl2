@@ -74,7 +74,16 @@ namespace Logistikcenter.Domain
             this.companyName = companyName;
             this.username = userName;
             //this.password = password;
-            this.customerType = CustomerType.Company;
+            this.customerType = CustomerType.Company;   
+        }
+
+        public Customer(string companyName, string userName, CustomerType customerType, string firstName, string lastName)
+        {
+            this.CompanyName = companyName;
+            this.Username = userName;
+            this.customerType = customerType;
+            this.firstName = firstName;
+            this.lastName = lastName;
         }
 
         //public virtual void Authenticate(string password)

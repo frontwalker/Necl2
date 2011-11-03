@@ -23,12 +23,14 @@ namespace Logistikcenter.Domain
         public virtual string UniqueIdentifier
         {
             get { return uniqueIdentifier; }
+            set { uniqueIdentifier = value; }
         }
 
 
         public virtual CarrierType CarrierType
         {
             get { return carrierType; }
+            set { carrierType = value; }
         }
 
         public virtual string CarrierTypeDisplayName
@@ -55,16 +57,19 @@ namespace Logistikcenter.Domain
         public virtual DateTime DepartureTime
         {
             get { return departureTime; }
+            set { departureTime = value; }
         }
 
         public virtual double Cost
         {
             get { return cost; }
+            set { cost = value; }
         }
 
         public virtual double TotalCapacity
         {
             get { return totalCapacity; }
+            set { totalCapacity = value; }
         }
 
         public virtual double UsedCapacity
@@ -76,17 +81,20 @@ namespace Logistikcenter.Domain
         public virtual ShippingAgent Carrier
         {
             get { return carrier; }
+            set { carrier = value; }
         }
 
         public virtual long Id
         {
             get { return id; }
+            set { id = value; }
         }
 
 
         public virtual Destination Destination
         {
             get { return destination; }
+            set { destination = value; }
         }
 
 
@@ -98,6 +106,7 @@ namespace Logistikcenter.Domain
         public virtual Destination Origin
         {
             get { return origin; }
+            set { origin = value; }
         }
 
 
@@ -106,7 +115,15 @@ namespace Logistikcenter.Domain
 
         protected Leg() { }
 
-        public Leg(string uniqueIdentifier,ShippingAgent carrier, CarrierType carrierType,Destination origin,Destination destination ,DateTime departureTime, DateTime arrivalTime, double cost, double totalCapacity)
+        public Leg(string uniqueIdentifier,
+            ShippingAgent carrier, 
+            CarrierType carrierType,
+            Destination origin,
+            Destination destination ,
+            DateTime departureTime, 
+            DateTime arrivalTime, 
+            double cost, 
+            double totalCapacity)
         {
             this.uniqueIdentifier = uniqueIdentifier;
             this.carrier = carrier;

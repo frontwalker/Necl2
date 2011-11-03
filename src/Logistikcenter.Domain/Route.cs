@@ -110,6 +110,9 @@ namespace Logistikcenter.Domain
             {
                 return transportUnit;
             }
+            set {
+                transportUnit = value;
+            }
         }
 
         

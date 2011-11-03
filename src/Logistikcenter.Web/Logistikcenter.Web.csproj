@@ -130,12 +130,20 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShippingAgentController.cs" />
     <Compile Include="Areas\Admin\Models\ShippingAgentModel.cs" />
+    <Compile Include="Areas\Admin\Models\SupplierModel.cs" />
     <Compile Include="Areas\API\APIAreaRegistration.cs" />
     <Compile Include="Areas\API\Controllers\DestinationController.cs" />
+    <Compile Include="Areas\ShippingAgentContent\Controllers\LegController.cs" />
+    <Compile Include="Areas\ShippingAgentContent\Models\LegModel.cs" />
+    <Compile Include="Areas\ShippingAgentContent\ShippingAgentContentAreaRegistration.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
+    <Compile Include="Controllers\PressController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\TransportController.cs" />
     <Compile Include="Extensions\RadioButtonExtensions.cs" />
     <Compile Include="Localization\ConventionsBasedModelMetaDataProvider.cs" />
@@ -166,6 +174,7 @@
     <Content Include="App_Data\logistikcenter.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\NHibernate.dll" />
     <Content Include="Content\Images\ArrowBig.gif" />
     <Content Include="Content\Images\ArrowSmall.gif" />
     <Content Include="Content\Images\Customer\DHL.gif" />
@@ -216,10 +225,13 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Mappings\Destination.hbm.xml" />
-    <EmbeddedResource Include="Persistence\Mappings\Leg.hbm.xml" />
+    <EmbeddedResource Include="Persistence\Mappings\Leg.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Mappings\Route.hbm.xml" />
     <EmbeddedResource Include="Persistence\Mappings\TransportBase.hbm.xml" />
     <EmbeddedResource Include="Persistence\Mappings\TransportUnit.hbm.xml" />
+    <Content Include="Persistence\Mappings\Supplier.hbm.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -274,8 +286,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Supplier\" />
     <Folder Include="Areas\API\Models\" />
     <Folder Include="Areas\API\Views\Shared\" />
+    <Folder Include="Areas\ShippingAgentContent\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Transport\Index.cshtml" />
@@ -339,11 +353,26 @@
     <Content Include="Views\Booking\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\ShippingAgentContent\Views\Web.config" />
+    <Content Include="Areas\ShippingAgentContent\Views\Leg\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ViewPage1.cshtml" />
+    <Content Include="Areas\ShippingAgentContent\Views\Leg\Delete.cshtml" />
+    <Content Include="Areas\ShippingAgentContent\Views\Leg\Index.cshtml" />
+    <Content Include="Areas\ShippingAgentContent\Views\Leg\Edit.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Support\Index.cshtml" />
+    <Content Include="Views\Press\Index.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\Support\FAQ.cshtml" />
+    <Content Include="Views\About\Contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

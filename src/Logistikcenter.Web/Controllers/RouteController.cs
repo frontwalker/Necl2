@@ -21,28 +21,33 @@ namespace Logistikcenter.Web.Controllers
         {
             var origin = _repository.Query<Destination>().Where(o => o.Name == transportModel.Origin).SingleOrDefault();
             var destination = _repository.Query<Destination>().Where(d => d.Name == transportModel.Destination).SingleOrDefault();
+            var legs = _repository.Query<Leg>().ToList<Leg>();//.Where(d => d.DepartureTime =).ToList<Leg>();
             
-            var cargoDefinition = new CargoDefinition(transportModel.Weight);
-            var transportUnit = new TransportUnit(origin, destination, transportModel.MinPickupTime, transportModel.MaxDeliveryTime, cargoDefinition);
 
-            // borde inte kunden endast vara intressant när det ska bokas något?
+            var cargoDefinition = new CargoDefinition(transportModel.Weight);
+            var transportUnit = new TransportUnit(origin, destination, transportModel.MinPickupTime, transportModel.MaxDeliveryTime, cargoDefinition); 
+            var routes = new Route(transportUnit, 0.0, legs);
+            
+            routes.TransportUnit = transportUnit;
+            //Hämta kunden DHL
             var customer = _repository.Query<Customer>().Where(c => c.CompanyName == "DHL").SingleOrDefault();
 
             var transportRequest = new TransportRequest(customer, transportUnit);
 
             _transportOptimizationService.LoadData(transportRequest.MinPickupTime, transportRequest.MaxDeliveryTime);
-            _transportOptimizationService.MinimizeCost(transportRequest.TransportUnits, 3);
+            _transportOptimizationService.MinimizeCost(transportRequest.TransportUnits, 4);
 
             var model = new RouteModel
                             {                           
                                 Packages = transportModel.Packages,
-                                //PackageType = transportModel.PackageTypes.Where(pt => pt.Value == transportModel.PackageType.ToString()).Select(pt => pt.Text).Single(),
+                                PackageType = System.Convert.ToString(transportModel.PackageType), //transportModel.PackageType.Where(pt => pt.Value == transportModel.PackageType.ToString()).Select(pt => pt.Text).Single(),
                                 //DeliveryInformation = transportModel.DateRestrictionTypes.Where(dr => dr.Value == transportModel.DateRestrictionType.ToString()).Select(dr => dr.Text).Single() + " " + transportModel.Date.Value.ToString("yyyy-MM-dd") + " " + transportModel.Time.ToString("00") + ":00",
                                 Volume = transportModel.Volume.ToString(),
                                 Origin = origin.Name,
                                 Destination = destination.Name,
                                 Routes = transportRequest.TransportUnits[0].ProposedRoutes
                             };
+   
 
             return View(model);
         }

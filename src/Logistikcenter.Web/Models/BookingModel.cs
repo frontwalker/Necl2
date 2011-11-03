@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Logistikcenter.Domain;
 
 namespace Logistikcenter.Web.Models
 {
@@ -11,14 +12,14 @@ namespace Logistikcenter.Web.Models
     {
         public NewBookingModel()
         {
-            Legs = new List<long>();
+            Legs = new List<Leg>(); //new List<long>(); 
         }
 
-        public IList<long> Legs { get; private set; }
+        public IList<Leg> Legs { get; private set; }
         public double Volume { get; set; }
         public double Weight { get; set; }
 
-        public void AddLegs(IEnumerable<long> legs)
+        public void AddLegs(IEnumerable<Leg> legs)
         {
             foreach (var leg in legs)
             {
@@ -26,6 +27,6 @@ namespace Logistikcenter.Web.Models
             }
         }
 
-        public int NumeberOfPackages { get; set; }
+        public int NumberOfPackages { get; set; }
     }
 }

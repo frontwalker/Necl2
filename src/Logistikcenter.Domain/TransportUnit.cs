@@ -104,7 +104,7 @@ namespace Logistikcenter.Domain
             this.minPickupTime = minPickupTime;
             this.maxDeliveryTime = maxDeliveryTime;
             this.cargo = cargo;
-
+            
         }
 
         public virtual void SelectRoute(int routeIndex)

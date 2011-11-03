@@ -1,4 +1,5 @@
 ﻿@model Logistikcenter.Web.Models.RouteModel
+           @using Logistikcenter.Domain;
 
 <script type="text/javascript">
 
@@ -43,19 +44,22 @@
             <td>@route.Duration.TotalHours.ToString("00"):@route.Duration.Minutes.ToString("00")</td>
             <td>@route.Information</td>
             <td>@route.Cost</td>
-
-            @{                                 
+            
+            @{                                
                 var newbooking = new Logistikcenter.Web.Models.NewBookingModel();
-
-                newbooking.AddLegs(route.Legs.Select(l => l.Id).AsEnumerable<long>());
-                newbooking.Volume = 0;
-                newbooking.NumeberOfPackages = 0;
+             newbooking.AddLegs(route.Legs.AsEnumerable<Leg>());
+             //   newbooking.AddLegs(route.Legs.Select(l => l.Id).AsEnumerable<long>());
+                newbooking.Volume = Double.Parse(@Model.Volume);
+                 
+                newbooking.NumberOfPackages = @Model.Packages;
 
                 string booking = Json.Encode(newbooking);
-                var b64 = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(booking));                                                
+                var b64 = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(booking));      
+                
+                var transportunit = System.Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(Json.Encode(new TransportUnit(route.Origin, route.Destination, route.DepartureTime, route.ArrivalTime, new CargoDefinition(route.Shortage)))));                                          
              }
 
-            <td><a href="/Booking/Create?info=@b64">Boka</a></td>
+            <td><a href="/Booking/Create?info=@b64?transportunit=@transportunit">Boka</a></td>
         </tr>
         <tr id="@rowId" style="display:none">
             <td>&nbsp;</td>

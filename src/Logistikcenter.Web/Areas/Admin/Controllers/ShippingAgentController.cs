@@ -22,7 +22,7 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
         {
             var shippingAgents = _repository.Query<ShippingAgent>()
                 .OrderBy(s => s.CompanyName)
-                .Select(s => new ShippingAgentModel {Id = s.Id, CompanyName = s.CompanyName, FirstName = s.FirstName, LastName = s.LastName});
+                .Select(s => new ShippingAgentModel {Id = s.Id, CompanyName = s.CompanyName, FirstName = s.FirstName, LastName = s.LastName, Email = s.Email});
 
             return View(shippingAgents);
         }
@@ -40,24 +40,60 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(shippingAgentModel);
 
-                _userService.AddShippingAgent(shippingAgentModel.Username, shippingAgentModel.Password);
+              //  _userService.AddShippingAgent(shippingAgentModel.Username, shippingAgentModel.Password);
 
-                var shippingAgent = new ShippingAgent
-                                        {
-                                            Username = shippingAgentModel.Username,
-                                            CompanyName = shippingAgentModel.CompanyName,
-                                            FirstName = shippingAgentModel.FirstName,
-                                            LastName = shippingAgentModel.LastName,
-                                            CustomerType = CustomerType.Company                                           
-                                        };
+                var shippingAgent = new Customer(shippingAgentModel.Username, shippingAgentModel.CompanyName);
+                /*
+                                        shippingAgentModel.FirstName,
+                                        shippingAgentModel.LastName,
+                                        shippingAgentModel.Username,
+                                        shippingAgentModel.Email,
+                                        shippingAgentModel.CompanyName
+                                        );*/
+                
+                shippingAgent.FirstName = shippingAgentModel.FirstName;
+                shippingAgent.LastName = shippingAgentModel.LastName;
+                //shippingAgent.Username = shippingAgentModel.Username;
+               // shippingAgent.CompanyName = shippingAgentModel.CompanyName;
+                shippingAgent.CustomerType = CustomerType.Company;
+             //   shippingAgent.Email = shippingAgentModel.Email;
+                 
 
+                _userService.AddShippingAgent(shippingAgentModel.Username, shippingAgentModel.Password, shippingAgentModel.Email);
+                    
+            
+               
                 _repository.Save(shippingAgent);
+                
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (System.Exception e)
             {
-                _userService.Remove(shippingAgentModel.Username);
+               /* try
+                {
+                    var customertmp = _repository.Query<Customer>().Where(s => s.Username == shippingAgentModel.Username).Single();
+
+                    var shippingAgent = new ShippingAgent();
+
+                    shippingAgent.FirstName = shippingAgentModel.FirstName;
+                    shippingAgent.LastName = shippingAgentModel.LastName;
+                    shippingAgent.Username = shippingAgentModel.Username;
+                    shippingAgent.CompanyName = shippingAgentModel.CompanyName;
+                    shippingAgent.CustomerType = CustomerType.Company;
+                    shippingAgent.Email = shippingAgentModel.Email;
+
+                   // shippingAgent.CustomerId = customertmp.Id;
+
+                    _repository.Save(shippingAgent);
+                    return RedirectToAction("Index");
+                }
+                catch(System.Exception e2)
+                {
+                    // _userService.Remove(shippingAgentModel.Username);
+                    return View();
+
+                }*/
                 return View();
             }
         }
@@ -79,6 +115,7 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                 shippingAgent.CompanyName = shippingAgentModel.CompanyName;
                 shippingAgent.FirstName = shippingAgentModel.FirstName;
                 shippingAgent.LastName = shippingAgentModel.LastName;
+                shippingAgent.Email = shippingAgentModel.Email;
                 
                 _repository.Update(shippingAgent);
 
@@ -128,7 +165,8 @@ namespace Logistikcenter.Web.Areas.Admin.Controllers
                             CompanyName = s.CompanyName,
                             FirstName = s.FirstName,
                             LastName = s.LastName,
-                            Username = s.Username
+                            Username = s.Username,
+                            Email = s.Email
                         })
                 .Single();
             
